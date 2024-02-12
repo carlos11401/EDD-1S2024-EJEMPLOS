@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "compile", // Task name
+      "type": "shell",
+      "command": "gfortran", // Compiler
+      "args": [   // Command line arguments
+        "-g",
+        "-o",
+        "bin\\myprogram.exe",
+        "main.f90",
+        "structures/circleList.f90"
+      ],
+      "options": {  // Working directory
+        "cwd": "clase2/"
+      }
+    }
+  ]
+}
