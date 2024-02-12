@@ -81,8 +81,8 @@ module circleList
       if(self%head%id == id) then
         self%head => current%next
 
-        next => self%head%next
-        prev => self%head%prev
+        next => current%next
+        prev => current%prev
         next%prev => prev
         prev%next => next
 
