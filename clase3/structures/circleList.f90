@@ -8,6 +8,7 @@ module circleList
     contains
       procedure :: add
       procedure :: print
+      procedure :: print_dot
       procedure :: remove
   end type circle_list
 
@@ -80,7 +81,6 @@ module circleList
     else
       if(self%head%id == id) then
         self%head => current%next
-
         next => current%next
         prev => current%prev
         next%prev => prev
@@ -125,4 +125,46 @@ module circleList
     end if
   end subroutine remove
 
+  subroutine print_dot(self, filename)
+    class(circle_list), intent(inout) :: self ! referencia a la lista
+    character(len=*), intent(in) :: filename ! nombre del archivo
+    type(node), pointer :: current ! puntero al nodo actual
+    integer :: id ! id del nodo
+
+    ! puntero al nodo actual
+    current => self%head
+
+    ! abrir el archivo
+    open(10, file=filename, status='replace') 
+    
+    ! escribir el encabezado
+    write(10, '(a)') "digraph G {" ! encabezado del archivo dot
+    write(10, '(a)') "  node [shape=circle];"  ! forma de los nodos
+    write(10, '(a)') "  rankdir=LR" ! orientación del grafo
+
+    if ( .not. associated(current))  then ! si la lista está vacía
+      write(10, '(a)') "  EmptyList;" ! escribir un nodo que diga que la lista está vacía
+    else ! si la lista no está vacía
+      write(10, '(a, i0, a)') '  Head -> Node', self%head%id, ';' ! escribir la arista de la cabeza al primer nodo
+      write(10, '(a, i0, a)') '  Tail -> Node', self%tail%id, ';' ! escribir la arista de la cola al último nodo
+      
+      do ! recorrer la lista
+        id = current%id
+        ! crear el nodo
+        write(10, '(a, i0, a, i0, a)') '  Node', id, ' [label="', id, '"];'
+        ! escribir las aristas
+        write(10, '(a, i0, a, i0)') '  Node', current%prev%id, ' -> Node', id, ';' ! arista del nodo anterior al nodo actual
+        write(10, '(a, i0, a, i0)') '  Node', current%next%id, ' -> Node', id, ';' ! arista del nodo siguiente al nodo actual
+
+        ! avanzar al siguiente nodo
+        current => current%next
+        ! si ya se recorrió toda la lista, salir del ciclo
+        if (id == self%tail%id) exit
+      end do
+    end if
+    ! escribir el pie del archivo
+    write(10, '(a)') "}"
+    ! cerrar el archivo
+    close(10)
+  end subroutine print_dot
 end module circleList

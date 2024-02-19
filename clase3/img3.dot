@@ -1,0 +1,16 @@
+digraph G {
+  node [shape=circle];
+  rankdir=LR
+  Head -> Node6;
+  Tail -> Node7;
+  Node6 [label="6"];
+  Node7 -> Node6
+;
+  Node7 -> Node6
+;
+  Node7 [label="7"];
+  Node6 -> Node7
+;
+  Node6 -> Node7
+;
+}
