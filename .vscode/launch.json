@@ -4,10 +4,10 @@
       "name": "Run GDB",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/clase2/bin/myprogram.exe", // Path to the executable
+      "program": "${workspaceFolder}/clase4/bin/myprogram.exe", // Path to the executable
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${workspaceFolder}/clase2", // Working directory
+      "cwd": "${workspaceFolder}/clase4", // Working directory
       "preLaunchTask": "compile", // Task to run before debugging
       "externalConsole": false,
       "MIMode": "gdb",

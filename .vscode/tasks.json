@@ -10,10 +10,10 @@
         "-o",
         "bin\\myprogram.exe",
         "main.f90",
-        "structures/circleList.f90"
+        "sort.f90"
       ],
       "options": {  // Working directory
-        "cwd": "clase2/"
+        "cwd": "clase4/"
       }
     }
   ]
