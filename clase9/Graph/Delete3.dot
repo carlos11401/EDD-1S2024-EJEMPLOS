@@ -1,0 +1,16 @@
+digraph G
+{
+ node	[shape = record,height=.1];
+node0[label="<r0>|<c1> 6|<r1>|<c2> 11|<r2>|<c3> 16|<r3>|<c4> 21|<r4>"];
+node1[label="<r0>|<c1> 3|<r1>|<c2> 4|<r2>|<c3> 5|<r3>"];
+node2[label="<r0>|<c1> 8|<r1>|<c2> 10|<r2>"];
+node3[label="<r0>|<c1> 12|<r1>|<c2> 14|<r2>"];
+node4[label="<r0>|<c1> 17|<r1>|<c2> 19|<r2>"];
+node5[label="<r0>|<c1> 26|<r1>|<c2> 27|<r2>|<c3> 28|<r3>"];
+
+"node0":r0 ->"node1"
+"node0":r1 -> "node2"
+"node0":r2 -> "node3"
+"node0":r3 -> "node4"
+"node0":r4 -> "node5"
+}
