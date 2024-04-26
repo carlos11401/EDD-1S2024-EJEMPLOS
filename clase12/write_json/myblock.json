@@ -1,0 +1,23 @@
+{
+  "INDEX": 0,
+  "NONCE": 434,
+  "DATA": [
+    {
+      "sucursal_o": "s1",
+      "direccion_o": "6ta av 4 calle zon2 de villa nueva",
+      "sucursal_d": "s2",
+      "direccion_d": "3ta av 2 calle zon5 de villa nueva",
+      "total": 200
+    },
+    {
+      "sucursal_o": "s2",
+      "direccion_o": "3ta av 2 calle zon5 de villa nueva",
+      "sucursal_d": "s3",
+      "direccion_d": "7ma av 3 calle zon10 de villa nueva",
+      "total": 150
+    }
+  ],
+  "ROOTMARKLE": "A54A537275899DFFAA1BF4A6126BD50BCA142537733DD23BC568364DB5611322",
+  "PREVIOUSHASH": 0,
+  "HASH": "AAC08A8A0657EEFFF0C26772CDC895537139EF0F8700EBB5F18572D88FFEE320"
+}
